@@ -1,12 +1,23 @@
-def calculate():
+def sort_students_by_grade(students):
     """
-    calculates the total
-    :return: None
+    Nutze die `sorted()` Funktion, um die Studenten basierend auf ihren Noten zu sortieren.
+
+    Parameters:
+    - students (list): Liste der Studenten und ihrer Noten.
+
+    Returns:
+    - list: Liste der sortierten Studenten.
     """
-    price = 15.75
-    quantity = 3  # TODO change quantity to 5
-    print(f'Total: {price * quantity}')
+    return []
 
 
 if __name__ == '__main__':
-    calculate()
+    students = [
+        ('Alice', 4.0),
+        ('Bob', 3.5),
+        ('Charlie', 4.25),
+        ('David', 5.5),
+        ('Manuel', 3.75)
+    ]
+    sorted_students = sort_students_by_grade(students)
+    print(sorted_students)
