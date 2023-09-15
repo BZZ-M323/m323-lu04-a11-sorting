@@ -8,7 +8,7 @@ def sort_students_by_grade(students):
     Returns:
     - list: Liste der sortierten Studenten.
     """
-    return []
+    return sorted(students, key=lambda student: student[1], reverse=True)
 
 
 if __name__ == '__main__':
