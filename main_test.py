@@ -10,17 +10,13 @@ def sample_students():
         ('Bob', 3.5),
         ('Charlie', 4.25),
         ('David', 5.5),
-        ('Manuel', 3.75)
+        ('Manuel', 3.75),
     ]
 
 
 @pytest.fixture
 def sample_students_with_same_grades():
-    return [
-        ('Eve', 4.0),
-        ('Frank', 4.0),
-        ('Grace', 3.5)
-    ]
+    return [('Eve', 4.0), ('Frank', 4.0), ('Grace', 3.5)]
 
 
 def test_sort_students_by_grade(sample_students):
@@ -38,8 +34,15 @@ def test_empty_list():
 
 
 def test_students_with_same_grades(sample_students_with_same_grades):
-    sorted_students_same_grades = sort_students_by_grade(sample_students_with_same_grades)
+    sorted_students_same_grades = sort_students_by_grade(
+        sample_students_with_same_grades
+    )
 
-    assert sorted_students_same_grades[0] == ('Eve', 4.0) or sorted_students_same_grades[0] == (
-    'Frank', 4.0)  # Reihenfolge von Eve und Frank kann variieren
+    assert sorted_students_same_grades[0] == (
+        'Eve',
+        4.0,
+    ) or sorted_students_same_grades[0] == (
+        'Frank',
+        4.0,
+    )  # Reihenfolge von Eve und Frank kann variieren
     assert sorted_students_same_grades[2] == ('Grace', 3.5)
